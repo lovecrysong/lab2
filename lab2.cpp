@@ -8,4 +8,4 @@ double Elo::getRa() {return Ra;}
 double Elo::getRb() {return Rb;}
 
 int Elo::a (double Sa){	return round(getRa()+getK()*(Sa-1/(1+pow(10,(getRb()-getRa())/400))));}
-int Elo::b (double Sb){	return round(getRb()+getK()*(Sb-1/(1+pow(10,(getRa()-getRb())/400))));}
+int Elo::b (double Sb, double RA){ return round(getRb()+getK()*(Sb-1/(1+pow(10,(RA-getRb())/400))));}

@@ -12,7 +12,7 @@ class Elo{
 		double getRb();
 
 		int a(double Sa);
-		int b(double Sb);
+		int b(double Sb, double RA);
 
 	private:
 		double K, Ra, Rb;

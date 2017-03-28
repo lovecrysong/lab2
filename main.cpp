@@ -4,7 +4,7 @@
 
 int main(){
 	int k;
-	double Sa, ra, rb;	
+	double Sa, ra, rb, RA;	
 	Elo elo;
 	fstream file1, file2;
 	file1.open("file.in", ios::in);
@@ -14,12 +14,14 @@ int main(){
 	elo.setRa(ra);
 	elo.setRb(rb);
 	file2 << ra << " " << rb << endl;
+	RA = elo.getRa();
 	while (file1 >> Sa)
 	{
 		file2 << elo.a(Sa) << " ";
+		file2 << elo.b(1-Sa, RA) << endl;
 		elo.setRa(elo.a(Sa));
-		file2 << elo.b(1-Sa) << endl;
-		elo.setRb(elo.b(1-Sa));
+		elo.setRb(elo.b(1-Sa, RA));
+		RA = elo.getRa();
 	}
 	file1.close();
 	file2.close();
