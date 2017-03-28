@@ -4,9 +4,9 @@ using namespace std;
 
 class Elo{
 	public:
-		void setK (double K);
-		void setRa (double Ra);
-		void setRb (double Rb);
+		void setK (double k);
+		void setRa (double ra);
+		void setRb (double rb);
 		double getK();
 		double getRa();
 		double getRb();
